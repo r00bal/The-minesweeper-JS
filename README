@@ -1,6 +1,12 @@
-This is a Minesweeper Project.
+##This is a Minesweeper Project.
 
-The following is a quick overview of the game:
+This project is a part of the CodeCademy course - Build Front-End Web Apps from Scratch with React!
+The course consists of two parts. First one is an introduction to JavaScript concepts and the second one focus on how to build interactive applications using the React.js library and how to make API requests with JavaScript.
+
+The Minesweeper Project summarizes the first part of the React's course - Introduction to JavaScript concepts.
+The culmination of Minesweeper Project is a game that you can play from the command line.
+
+*The following is a quick overview of the game:
 
 The objective is to successfully navigate (or, "clear") a grid of squares without encountering any hidden mines (bombs).
 Clicking on a square reveals what is underneath the square.
