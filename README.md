@@ -6,7 +6,7 @@ The course consists of two parts. First one is an introduction to JavaScript con
 The Minesweeper Project summarizes the first part of the React's course - Introduction to JavaScript concepts.
 The culmination of Minesweeper Project is a game that you can play from the command line.
 
-*The following is a quick overview of the game:
+*The following is a quick overview of the game:*
 
 The objective is to successfully navigate (or, "clear") a grid of squares without encountering any hidden mines (bombs).
 Clicking on a square reveals what is underneath the square.
