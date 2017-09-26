@@ -1,6 +1,6 @@
-This is a Minesweeper Project.
+##This is a Minesweeper Project.
 
-The following is a quick overview of the game:
+*The following is a quick overview of the game:
 
 The objective is to successfully navigate (or, "clear") a grid of squares without encountering any hidden mines (bombs).
 Clicking on a square reveals what is underneath the square.
