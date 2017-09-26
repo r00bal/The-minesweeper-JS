@@ -1,4 +1,4 @@
-##This is a Minesweeper Project.
+# This is a Minesweeper Project.
 
 This project is a part of the CodeCademy course - Build Front-End Web Apps from Scratch with React!
 The course consists of two parts. First one is an introduction to JavaScript concepts and the second one focus on how to build interactive applications using the React.js library and how to make API requests with JavaScript.
