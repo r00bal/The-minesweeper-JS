@@ -1,6 +1,6 @@
 
 class Game {
-  contructor(numberOfRows, numberOfColumns, numberOfBombs) {
+  constructor(numberOfRows, numberOfColumns, numberOfBombs) {
     this._board = new Board(numberOfRows, numberOfColumns, numberOfBombs);
   }
 
@@ -16,7 +16,7 @@ class Game {
       this._board.print();
     }
   }
-}
+};
 
 
 
@@ -25,7 +25,7 @@ class Board {
     this._numberOfBombs = numberOfBombs;
     this._numberOfTiles = numberOfRows * numberOfColumns;
     this._playerBoard = Board.generatePlayerBoard(numberOfRows,numberOfColumns);
-    this._bombBoard = Board.generateBombBoard(numberOfRows,numberOfColumns,generateBombBoard);
+    this._bombBoard = Board.generateBombBoard(numberOfRows,numberOfColumns,numberOfBombs);
   }
 
   get playerBoard() {
@@ -38,7 +38,7 @@ class Board {
     } else if (this._bombBoard[rowIndex][columnIndex] === 'B') {
       this._playerBoard[rowIndex][columnIndex] = 'B';
     } else {
-      this._playerBoard[rowIndex][columnIndex] = getNumberOfNeighborBombs(rowIndex, columnIndex)
+      this._playerBoard[rowIndex][columnIndex] = this.getNumberOfNeighborBombs(rowIndex, columnIndex)
     }
     this._numberOfTiles --
   }
@@ -72,7 +72,7 @@ class Board {
   }
 
   hasSafeTiles() {
-    this._numberOfTiles !== this._numberOfBombs ?  return this._numberOfTiles !== this._numberOfBombs;
+    return this._numberOfTiles === this._numberOfBombs;
   }
 
   print() {
@@ -112,19 +112,9 @@ class Board {
     return board;
   };
 
-}
+};
 
-
-
-
-
-
-
-
-
-
-
-
+/*
 let playerBoard = generatePlayerBoard(3,4);
 let bombBoard = generateBombBoard(3,4,5);
 
@@ -136,3 +126,7 @@ printBoard(bombBoard);
 flipTile(playerBoard, bombBoard, 0, 0);
 console.log('Updated Player Board:');
 printBoard(playerBoard);
+*/
+
+const g = new Game(3,3,3);
+g.playMove(0,2);
