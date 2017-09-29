@@ -10,7 +10,7 @@ class Board {
     return this._playerBoard;
   }
 
-  flipTile(rowIndex, columnIndex) => {
+  flipTile(rowIndex, columnIndex) {
     if(this._playerBoard[rowIndex][columnIndex] !== ' ') {
       return 'This tile has already been flipped!';
     } else if (this._bombBoard[rowIndex][columnIndex] === 'B') {
@@ -20,6 +20,35 @@ class Board {
     }
     this._numberOfTiles --
   }
+
+  getNumberOfNeighborBombs(rowIndex, columnIndex) {
+    const neighborOffsets = [
+    [-1,-1],
+    [-1,0],
+    [-1,1],
+    [0,-1],
+    [0,1],
+    [1,-1],
+    [1,0],
+    [1,1]
+    ];
+    const numberOfRows = this._bombBoard.length;
+    const numberOfColumns = this._bombBoard[0].length;
+    let numberOfBombs = 0;
+
+    neighborOffsets.forEach(offset => {
+    const neighborRowIndex = rowIndex + offset[0];
+    const neighborColumnIndex = columnIndex + offset[1];
+    if (neighborRowIndex>=0 && neighborRowIndex<numberOfRows
+      && neighborColumnIndex>=0 && neighborColumnIndex<numberOfRows) {
+      if (this._bombBoard[neighborRowIndex][neighborColumnIndex] === 'B') {
+        numberOfBombs++;
+      }
+    }
+    });
+    return numberOfBombs;
+  };
+  
 }
 
 const printBoard = (board) => {
@@ -61,33 +90,7 @@ const generateBombBoard = (numberOfRows,numberOfColumns, numberOfBombs) => {
   return board;
 };
 
-const getNumberOfNeighborBombs = (bombBoard, rowIndex, columnIndex) => {
-  const neighborOffsets = [
-  [-1,-1],
-  [-1,0],
-  [-1,1],
-  [0,-1],
-  [0,1],
-  [1,-1],
-  [1,0],
-  [1,1]
-  ];
-  const numberOfRows = bombBoard.length;
-  const numberOfColumns = bombBoard[0].length;
-  let numberOfBombs = 0;
 
-  neighborOffsets.forEach(offset => {
-  const neighborRowIndex = rowIndex + offset[0];
-  const neighborColumnIndex = columnIndex + offset[1];
-  if (neighborRowIndex>=0 && neighborRowIndex<numberOfRows
-    && neighborColumnIndex>=0 && neighborColumnIndex<numberOfRows) {
-    if (bombBoard[neighborRowIndex][neighborColumnIndex] === 'B') {
-      numberOfBombs++;
-    }
-  }
-  });
-  return numberOfBombs;
-};
 
 
 
