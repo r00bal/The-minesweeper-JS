@@ -1,3 +1,25 @@
+
+class Game {
+  contructor(numberOfRows, numberOfColumns, numberOfBombs) {
+    this._board = new Board(numberOfRows, numberOfColumns, numberOfBombs);
+  }
+
+  playMove(rowIndex, columnIndex) {
+    this._board.flipTile(rowIndex, columnIndex);
+    if (this._board.playerBoard[rowIndex][columnIndex] === 'B') {
+    console.log('game over');
+    this._board.print();
+    } else if (this._board.hasSafeTiles()) {
+      console.log('Congratulation, you won!');
+    } else {
+      console.log('Current Board:')
+      this._board.print();
+    }
+  }
+}
+
+
+
 class Board {
   constructor(numberOfRows, numberOfColumns, numberOfBombs) {
     this._numberOfBombs = numberOfBombs;
@@ -50,7 +72,7 @@ class Board {
   }
 
   hasSafeTiles() {
-    _numberOfTiles !== _numberOfBombs ?  return _numberOfTiles !== _numberOfBombs;
+    this._numberOfTiles !== this._numberOfBombs ?  return this._numberOfTiles !== this._numberOfBombs;
   }
 
   print() {
