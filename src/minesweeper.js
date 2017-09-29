@@ -47,8 +47,13 @@ class Board {
     }
     });
     return numberOfBombs;
-  };
-  
+  }
+
+  hasSafeTiles() {
+    _numberOfTiles !== _numberOfBombs ?  return _numberOfTiles !== _numberOfBombs;
+  }
+
+
 }
 
 const printBoard = (board) => {
